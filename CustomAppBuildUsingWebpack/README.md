@@ -1,17 +1,20 @@
 # Кастомная сборка приложения с использованием webpack
 
 ## Шаг№1: инициализируем npm
+
 ```console
 npm init
 ```
 
 ## Шаг№2: создаём файл .gitignore
+
 ```console
 /dist
 /node_modules
 ```
 
 ## Шаг№3: устанавливаем webpack
+
 ```console
 npm install webpack -D -E
 npm install webpack-cli -D -E
@@ -20,6 +23,7 @@ npm install html-webpack-plugin -D -E # Чтобы вебпак мог рабо�
 ```
 
 ## Шаг№4: устанавливаем React
+
 ```console
 npm install react -E
 npm install react-dom -E
@@ -28,12 +32,14 @@ npm install @types/react-dom -D -E
 ```
 
 ## Шаг№5: устанавливаем TypeScript
+
 ```console
 npm install typescript -D -E
 npm install ts-loader -D -E # Чтобы вебпак мог билдить ts-файлы
 ```
 
 ## Шаг№6: создаём tsconfig.json
+
 ```json
 {
   "compilerOptions": {
@@ -50,13 +56,14 @@ npm install ts-loader -D -E # Чтобы вебпак мог билдить ts-�
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "jsx": "react",
-    "typeRoots": ["./node_modules/@types", "./src/types/index.d.ts"],
+    "typeRoots": ["./node_modules/@types", "./src/types/index.d.ts"]
   },
   "include": ["src"]
 }
 ```
 
 ## Шаг№7: создаём public/index.html
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -79,6 +86,7 @@ npm install ts-loader -D -E # Чтобы вебпак мог билдить ts-�
 ```
 
 ## Шаг№8: создаём src/App.tsx
+
 ```ts
 import React from "react";
 
@@ -88,6 +96,7 @@ export const App = () => {
 ```
 
 ## Шаг№9: создаём src/bootstrap.tsx
+
 ```ts
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -105,11 +114,13 @@ root.render(
 ```
 
 ## Шаг№10: создаём src/index.tsx
+
 ```ts
 import("./bootstrap");
 ```
 
 ## Шаг№11: создаём webpack.config.js
+
 ```js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -152,6 +163,7 @@ module.exports = {
 ```
 
 ## Шаг№12: Добавляем в package.json скрипты для билда и для запуска
+
 ```json
 {
   "build": "npx webpack --mode production",
