@@ -24,7 +24,7 @@ npm install gh-pages -D -E
 
 ```console
 "predeploy": "npm run build",
-"deploy": "gh-pages -d build"
+"deploy": "gh-pages -d build" (build - это папка, куда собирается проект. В некоторых проектах она называется "dist")
 ```
 
 Эти изменения пушим в наш репозиторий.
