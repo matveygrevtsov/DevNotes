@@ -133,6 +133,7 @@ module.exports = {
   output: {
     path: OUTPUT_FOLDER_NAME,
     filename: "bundle.js",
+    clean: true // Очищает выходную папку перед сборкой
   }, // выходной файл
   resolve: {
     extensions: [".tsx", ".ts", ".js", "jsx"],
